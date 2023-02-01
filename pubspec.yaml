@@ -31,6 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  card_swiper: ^2.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,7 +61,18 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+      - images/Loading_icon.gif
+      - images/Destacado1.jpg
+      - images/Destacado2.png
+      - images/Destacado3.jpg
+      - images/Presentador1.jpeg
+      - images/Presentador2.jpg
+      - images/Presentador3.jpeg
+      - images/teatro1.jpg
+      - images/teatro2.jpg
+      - images/teatro3.png
+      - images/logo.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
