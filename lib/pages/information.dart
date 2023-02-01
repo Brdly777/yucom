@@ -11,9 +11,10 @@ class Information extends StatelessWidget {
         appBar: AppBar(
           leading: Builder(builder: (BuildContext context) {
             return IconButton(
-                padding: const EdgeInsets.all(1.0),
-                onPressed: null,
-                icon: Image.asset('images/logo.png', scale: 15));
+                onPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                icon: const Icon(Icons.arrow_back, color: Colors.black,));
           }),
           title: const Text(
             'Yucom',
@@ -78,19 +79,25 @@ class Information extends StatelessWidget {
             ),
             Padding(padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Card(
-                color: Color.fromARGB(0, 255, 255, 255),
+                elevation: 10,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
-                      children: const <Widget>[
-                      Text('Teatro'),
-                      Text("Armando Manzanero"),
-                      Text('120 pesos'),
-                      Padding(padding: EdgeInsets.fromLTRB(8, 25, 8, 15),
+                      children: <Widget>[
+                      const Text('Teatro'),
+                      const Text("Armando Manzanero"),
+                      const Text('120 pesos'),
+                      Padding(padding: const EdgeInsets.fromLTRB(8, 25, 8, 15),
                       child: ElevatedButton(
-                        onPressed: null,
-                        child: Text('reservar')
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                        ),
+                        onPressed:() {
+
+                          Navigator.pushNamed(context, '/Chooseticket');
+                        },
+                        child: const Text('Reservar')
                         )),
                       ],
                     ),

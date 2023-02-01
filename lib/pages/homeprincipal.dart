@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yucom/statemanager/cardsprincipal.dart';
 import 'package:yucom/statemanager/carrusel_imagen.dart';
 
 class HomePrincipal extends StatefulWidget {
@@ -50,7 +51,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
                     fontSize: 15,
                     letterSpacing: 2)),
             const ListaImagen(),
-            const Padding(padding: EdgeInsets.all(15)),
+            const Padding(padding: EdgeInsets.all(12)),
             const Text('Eventos proximos',
                 style: TextStyle(
                     color: Colors.black,
@@ -58,7 +59,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
                     fontSize: 15,
                     letterSpacing: 2)),
             const ListaImagen(),
-            const Padding(padding: EdgeInsets.all(15)),
+            const Padding(padding: EdgeInsets.all(12)),
             const Text('Populares',
                 style: TextStyle(
                     color: Colors.black,
@@ -78,53 +79,6 @@ class ListaImagen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: const EdgeInsets.all(5.0), child: const cards());
+    return Container(padding: const EdgeInsets.all(5.0), child: const CardsPrincipal());
   }
 }
-
-class cards extends StatelessWidget {
-  const cards({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const image = 'images/Presentador1.jpeg';
-    const image1 = 'images/Presentador2.jpg';
-    const image2 = 'images/Presentador3.jpeg';
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/Informacion');
-            },
-            child: Column(
-              children: [Image.asset(image), const Text('cuxum')],
-            ),
-          ),
-        ),
-        const Padding(padding: EdgeInsets.all(3.0)),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Image.asset(image1), const Text('Dzereco y Nohoch')],
-          ),
-        ),
-        const Padding(padding: EdgeInsets.all(3.0)),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Image.asset(image2), const Text('Pinole')],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
