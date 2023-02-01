@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/':(context) => const HomePrincipal(),
         '/Informacion' :(context) =>  const Information(),
+        '/Chooseticket' :(context) => const ChooseTicket()
       },
     );
   }
