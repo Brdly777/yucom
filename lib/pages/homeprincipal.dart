@@ -39,6 +39,17 @@ class _HomePrincipalState extends State<HomePrincipal> {
               },
             ),
             ListTile(
+              title: const Text('Buscar'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SearchPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
               title: const Text('Registrarse'),
               onTap: () {
                 Navigator.pop(context);
@@ -51,17 +62,6 @@ class _HomePrincipalState extends State<HomePrincipal> {
             ),
             ListTile(
               title: const Text('Iniciar Sesion'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => LoginPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Login'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(
