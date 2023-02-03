@@ -6,6 +6,7 @@ import 'package:yucom/pages/Login.dart';
 import 'notifications_page.dart';
 import 'search_page.dart';
 import 'Tutorial1.dart';
+import 'Registrar.dart';
 
 class HomePrincipal extends StatefulWidget {
   const HomePrincipal({super.key});
@@ -28,6 +29,28 @@ class _HomePrincipalState extends State<HomePrincipal> {
             ),
             ListTile(
               title: const Text('Tutorial'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Tutorial1(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Registrarse'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => RegistroPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Iniciar Sesion'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(
@@ -55,17 +78,6 @@ class _HomePrincipalState extends State<HomePrincipal> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => notificationsPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tutorial'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Tutorial1(),
                   ),
                 );
               },
