@@ -14,7 +14,10 @@ class Information extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/');
                 },
-                icon: const Icon(Icons.arrow_back, color: Colors.black,));
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ));
           }),
           title: const Text(
             'Yucom',
@@ -77,38 +80,39 @@ class Information extends StatelessWidget {
               child: Text(
                   '🌟 ESTE VIERNES 28 DE AGOSTO 🎭 Show en tu establecimiento favorito! 🖥Teatro Cómico Yucateco 100% Familiar CUXUM Y Su Cía de Teatro Regional Presentan: AMLOnde Vamos a parar con la PANdemia VIERNES 28 de Agosto 8:30pm'),
             ),
-            Padding(padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Card(
-                elevation: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: <Widget>[
-                      const Text('Teatro'),
-                      const Text("Armando Manzanero"),
-                      const Text('120 pesos'),
-                      Padding(padding: const EdgeInsets.fromLTRB(8, 25, 8, 15),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                        ),
-                        onPressed:() {
-
-                          Navigator.pushNamed(context, '/Chooseticket');
-                        },
-                        child: const Text('Reservar')
-                        )),
-                      ],
-                    ),
-                    const Padding(padding: EdgeInsets.fromLTRB(0, 12, 0, 12),
-                    child: Carrusel(),)
-                  ],
-                )
-              ),
+                  elevation: 10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: <Widget>[
+                          const Text('Teatro'),
+                          const Text("Armando Manzanero"),
+                          const Text('120 pesos'),
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(8, 25, 8, 15),
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.red,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, '/Chooseticket');
+                                  },
+                                  child: const Text('Reservar'))),
+                        ],
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(0, 12, 0, 12),
+                        child: Carrusel(),
+                      )
+                    ],
+                  )),
             )
-        ],
-      )
-    );
+          ],
+        ));
   }
 }

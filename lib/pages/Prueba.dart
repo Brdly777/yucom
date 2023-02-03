@@ -47,7 +47,7 @@ class _PruebaPageState extends State<PruebaPage> {
                     height: 10,
                   ),
                   Text(
-                    "Welcome Back",
+                    "Wellcome Back",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],

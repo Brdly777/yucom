@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Yucom',
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePrincipal(),
-        '/Informacion': (context) => const Information(),
-        '/Chooseticket': (context) => const ChooseTicket()
+        '/': (context) => HomePrincipal(),
       },
     );
   }

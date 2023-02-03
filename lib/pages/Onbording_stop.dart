@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+import 'package:yucom/Utils/utils.dart';
 
-import 'package:teatros_rejionales/Utils/utils.dart';
 class OnboardingStep extends StatelessWidget {
   OnboardingStep({
     Key? key,

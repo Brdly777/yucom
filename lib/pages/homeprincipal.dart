@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:yucom/pages/search_page.dart';
 import 'package:yucom/statemanager/cardsprincipal.dart';
 import 'package:yucom/statemanager/carrusel_imagen.dart';
+import 'package:yucom/pages/Login.dart';
+import 'notifications_page.dart';
+import 'search_page.dart';
+import 'Tutorial1.dart';
 
 class HomePrincipal extends StatefulWidget {
   const HomePrincipal({super.key});
@@ -13,62 +18,120 @@ class _HomePrincipalState extends State<HomePrincipal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Builder(builder: (BuildContext context) {
-            return IconButton(
-                onPressed: null,
-                icon: Image.asset('images/logo.png', scale: 15));
-          }),
-          title: const Text(
-            'Yucom',
-            style: TextStyle(
-              color: Color.fromARGB(255, 0, 0, 0),
-              letterSpacing: 3,
-              fontSize: 20,
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Color.fromARGB(255, 255, 17, 0)),
+              child: Text('Yucom'),
             ),
-          ),
-          actions: const [
-            Padding(padding: EdgeInsets.all(20.0)),
-            IconButton(
-                onPressed: null,
-                icon: Icon(Icons.search, color: Colors.black, size: 30)),
-            IconButton(
-                onPressed: null,
-                icon: Icon(Icons.menu, color: Colors.black, size: 30))
+            ListTile(
+              title: const Text('Tutorial'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Notificaciones'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => notificationsPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Tutorial'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Tutorial1(),
+                  ),
+                );
+              },
+            ),
           ],
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
-        body: ListView(
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.fromLTRB(0, 15, 0, 18),
-              child: const Carrusel_Imagen(),
-            ),
-            const Text('Destacados',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    letterSpacing: 2)),
-            const ListaImagen(),
-            const Padding(padding: EdgeInsets.all(12)),
-            const Text('Eventos proximos',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    letterSpacing: 2)),
-            const ListaImagen(),
-            const Padding(padding: EdgeInsets.all(12)),
-            const Text('Populares',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    letterSpacing: 2)),
-            const ListaImagen(),
-          ],
-        ));
+      ),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black87),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+              onPressed: null, icon: Image.asset('images/logo.png', scale: 15));
+        }),
+        title: const Text(
+          'Yucom',
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            letterSpacing: 3,
+            fontSize: 20,
+          ),
+        ),
+        actions: [
+          Padding(padding: EdgeInsets.all(20.0)),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },
+              icon: Icon(Icons.search, color: Colors.black, size: 30)),
+        ],
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      ),
+      body: ListView(
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.fromLTRB(0, 15, 0, 18),
+            child: const Carrusel_Imagen(),
+          ),
+          const Text('Destacados',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  letterSpacing: 2)),
+          const ListaImagen(),
+          const Padding(padding: EdgeInsets.all(12)),
+          const Text('Eventos proximos',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  letterSpacing: 2)),
+          const ListaImagen(),
+          const Padding(padding: EdgeInsets.all(12)),
+          const Text('Populares',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  letterSpacing: 2)),
+          const ListaImagen(),
+        ],
+      ),
+    );
   }
 }
 
@@ -79,6 +142,7 @@ class ListaImagen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: const EdgeInsets.all(5.0), child: const CardsPrincipal());
+    return Container(
+        padding: const EdgeInsets.all(5.0), child: const CardsPrincipal());
   }
 }

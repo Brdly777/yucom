@@ -74,8 +74,8 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffffffff),
-      endDrawer: const Drawer(),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black87),
         leading: BackButton(
           color: Colors.black54,
         ),
